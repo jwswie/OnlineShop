@@ -12,8 +12,8 @@
         public string Description3 { get; set; }
         public string Description4 { get; set; }
 
-        public Product(string name, int price, int discount, string image, string altImage,
-            string description1 = "default", string description2 = "default", string description3 = "default", string description4 = "default")
+        public Product(string name, int price, string image, string altImage,
+             int discount = 0, string description1 = "default", string description2 = "default", string description3 = "default", string description4 = "default")
         {
             this.Name = name;
             this.Price = price;
