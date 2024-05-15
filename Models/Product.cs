@@ -1,37 +1,30 @@
-﻿using System.Data.SqlTypes;
-
-namespace ASPNETMVCProject.Models
+﻿namespace ASPNETMVCProject.Models
 {
-    public enum Category
-    {
-        Laptops,
-        Phones,
-        GPU
-    }
     public class Product
     {
-        //USER_ID INT,
-        //Product_Name VARCHAR(255),
-        //Product_Description VARCHAR(255),
-        //Category VARCHAR(255),
-        //Amount INT,
-        //Discount INT,
-        //Price INT,
-        //FOREIGN KEY(USER_ID) REFERENCES Users(USER_ID)
-        public int PRODUCT_ID { get; set; }
-        public string Product_Name { get; set; }
-        public Category Category { get; set; }
-        public double Price { get; set; }
-        public double DiscountPercent { get; set; }
-        public double PriceWithDiscount { get => Price -= Price * DiscountPercent / 100; }
+        public string Name { get; set; }
+        public int Price { get; set; }
+        public int Discount { get; set; }
+        public string Image { get; set; }
+        public string AltImage { get; set; }
+        public string Description1 { get; set; }
+        public string Description2 { get; set; }
+        public string Description3 { get; set; }
+        public string Description4 { get; set; }
 
-        public Product(int productId, string name, Category category, double price, double discountPercent = 0)
+        public Product(string name, int price, int discount, string image, string altImage,
+            string description1 = "default", string description2 = "default", string description3 = "default", string description4 = "default")
         {
-            PRODUCT_ID = productId;
-            Product_Name = name;
-            Category = category;
-            Price = price;
-            DiscountPercent = discountPercent;
+            this.Name = name;
+            this.Price = price;
+            this.Discount = discount;
+            this.Image = image;
+            this.AltImage = altImage;
+            this.Description1 = description1;
+            this.Description2 = description2;
+            this.Description3 = description3;
+            this.Description4 = description4;
         }
     }
+
 }
